@@ -1,9 +1,7 @@
 # Leveraging the Command Line for Increased Productivity
-	* grep / rgrep
 	* less / bat
 	* I/O redirection to create log files
 	* pipes to chain programs
-	* pbcopy, pbpaste, Linux versions
 	* tmux
 	* vim
 
@@ -29,15 +27,37 @@ In the above case, I’m running tests written in the Golang language but the I/
 ## pbcopy & pbpaste
 Two of my favorite little features are `pbcopy` and `pbpaste` which are the copy and paste functions on the command line for MacOSX. For Linux users, there are similar commands that you can download: [How To Use Pbcopy And Pbpaste Commands On Linux - OSTechNix](https://www.ostechnix.com/how-to-use-pbcopy-and-pbpaste-commands-on-linux/)
 
+I love these commands as they allow me to copy information from the command line without taking my hands away from the keyboard. They also make it easy to copy & paste file contents that may be difficult to accomplish with a mouse, such as with copying RSA keys to Github or other  sites like so:
 
+`$ cat public_rsa.sh | pbcopy`
+
+You can then simply use your keyboard shortcut for paste to dump the contents where you need to.
 
 ## grep & rgrep
+With `grep` we obtain a massive superpower: the ability to find all the occurrences of a given expression in all folders and files found at a given path. This is incredibly useful for when you’re editing a file and come across a function that you need to modify or look up for more information. Using `grep` we can find every place that the function is used in milliseconds.
+
+For example, let’s say I’m working on an API endpoint that has a `validateRequest` function and I want to see how this function is implemented. I can use `grep`  in the parent directory to easily find where the function is defined like so:
+
+`$ grep validateRequest parent_dir/*`
+
+(TODO: add pic of using grep on computer)
+
+And the output will give me all the files and line numbers where we can find `validateRequest` being invoked or defined. This is extremely helpful when working with a large codebase and the execution is much faster than using the Github search feature (or what every source control solution you use).
+
+As a bonus, I’d recommend that you look into `rgrep` which is a re-implementation of `grep` written in Rust that is several orders faster than `grep`.
+
+(TODO: add pic of using rgrep on computer)
 
 ## less / bat
+The next tool that I want to cover is `less` which allows you to interactively view the contents of a file in your terminal. This differs from `cat` or `tail` in that you can view the whole file, not just a defined set of lines at either the top or bottom of the file. 
+
+And with `less`, you can can search through the file quickly using the `/` or `?` commands. To search in a file from your cursor down use `/` plus an expression, and to search from your cursor up use `?`. The reason you should know both is because searching in `less` does not wrap around to the beginning or end of a file, unlike with vim.
+
+I use `less` all the time in my work because it makes it so easy to reference a file while I edit another file. If you use iTerm2 then you can edit the file in one pane while using `less` in the other. I personally use `tmux` to generate my panes and do the same.
+
+But the real magic comes when you use `grep` and `less` together to boost your workflow! Working on a file and need to find & see another piece of code in the codebase?
+
 
 ## pipes
-
-
-
 
 
