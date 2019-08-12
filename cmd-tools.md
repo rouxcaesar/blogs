@@ -1,7 +1,4 @@
 # Leveraging the Command Line for Increased Productivity
-	* less / bat
-	* I/O redirection to create log files
-	* pipes to chain programs
 	* tmux
 	* vim
 
@@ -55,9 +52,26 @@ And with `less`, you can can search through the file quickly using the `/` or `?
 
 I use `less` all the time in my work because it makes it so easy to reference a file while I edit another file. If you use iTerm2 then you can edit the file in one pane while using `less` in the other. I personally use `tmux` to generate my panes and do the same.
 
-But the real magic comes when you use `grep` and `less` together to boost your workflow! Working on a file and need to find & see another piece of code in the codebase?
+But the real magic comes when you use `grep` and `less` together to boost your workflow! Working on a file and need to find & reference another piece of code in the codebase? Just open up another terminal tab or window (or create another pane with iTerm2 or tmux), `grep` for the code you're looking for, and then use `less` to see the inner workings!
 
+I've found `less` to be a huge boost in my productivity and recently I've discovered `bat`, which is a re-implemenation of `less` that provides syntax highlighting, line numbering, and many other features. Give it a try!
+
+## tmux
+I've already mentioned `tmux` in previous sections, and here I'd like to give a break peek in how I use it. Essentially, `tmux` is a terminal multiplexer that acts as a window manager for your terminal. You can create panes that act as split screens so that you can perform separate operations in the same terminal window.
+
+`tmux` also allows you to create terminal "sessions", attach to a session, create create a unique layout that could have files open or processes running, and detach from a session while retaining your pane layout.
+
+It's best understood with some images, so here you go:
+
+(TODO: add pic of using tmux on computer)
+
+There are a ton of things that you can do with `tmux` and I won't be covering all of them here, so dive into the following links if you're interesting in learinging more:
+
+(TODO: add links to tmux resources)
 
 ## pipes
+Next up are pipes, which are a fundamental feature of the command line. Represented by the `|` character, pipes are used to chain commands together to achievesomething that any one command could not. Essentially, a pipe allows you to take the output of one command and use it as the input of another command.
+
+An example of this would be 
 
 
