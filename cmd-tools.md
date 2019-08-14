@@ -57,7 +57,7 @@ But the real magic comes when you use `grep` and `less` together to boost your w
 I've found `less` to be a huge boost in my productivity and recently I've discovered `bat`, which is a re-implemenation of `less` that provides syntax highlighting, line numbering, and many other features. Give it a try!
 
 ## tmux
-I've already mentioned `tmux` in previous sections, and here I'd like to give a break peek in how I use it. Essentially, `tmux` is a terminal multiplexer that acts as a window manager for your terminal. You can create panes that act as split screens so that you can perform separate operations in the same terminal window.
+I've already mentioned `tmux` in previous sections, and here I'd like to give a brief peek at how I use it. Essentially, `tmux` is a terminal multiplexer that acts as a window manager for your terminal. It allows you to create "windows" and cycle through through them so that you can have a window for separate tasks or processes. Additionally, you can create panes in each window that act as split screens so that you can perform separate operations in the same terminal window.
 
 `tmux` also allows you to create terminal "sessions", attach to a session, create create a unique layout that could have files open or processes running, and detach from a session while retaining your pane layout.
 
@@ -65,13 +65,21 @@ It's best understood with some images, so here you go:
 
 (TODO: add pic of using tmux on computer)
 
-There are a ton of things that you can do with `tmux` and I won't be covering all of them here, so dive into the following links if you're interesting in learinging more:
+There are a ton of things that you can do with `tmux` and my goal here is just to introduce it as an essential tool in my workflow. If you're interested in learning more about `tmux`, check out the following links:
 
 (TODO: add links to tmux resources)
 
-## pipes
-Next up are pipes, which are a fundamental feature of the command line. Represented by the `|` character, pipes are used to chain commands together to achievesomething that any one command could not. Essentially, a pipe allows you to take the output of one command and use it as the input of another command.
+## vim
+Last but not least we have vim, a text editor that comes pre-installed with every Linux and MacOS operating system. It has a reputation for being difficult to learn, but I actually found that it's not that hard so long as you have patience and learn in small chunks.
 
-An example of this would be 
+Vim allows you to edit and navigate all of your files entirely from the keyboard and those who are proficient in vim find themselves rarely using their mouse while coding. While using vim, you can navigate your cursor with the h, j, k, l keys much like old school computer games. It also has a TON of commands that you can chain together to rapidly change your code. For example, you can delete everything within a function between the `{}` characters simply by putting your cursor in the function body and typing `di{` which stands for "delete inside {}". You can perform similar functions with words, lines, paragraphs, and text inside "" or () characters, and after spending time learning vim you'll be amazed at how much more productive you can be.
 
+The other huge plus in using vim is how customizable it is. Not only are there plenty of plugins that you can download to get specific key shortcuts, syntax coloring, and more, but you can also setup your own shortcuts by modifying your vim's configurations in a `.vimrc` file. Vim truly is a tool that you make your own and time invested in learning it is well spent.
 
+To get started learning vim, simply go to your command line if you're on Linux or MacOS, type `vimtutor`, and hit Enter. You'll be taken to an interactive tutorial of vim that'll teach you the basics. After that, check out the following resources:
+
+## Closing Thoughts
+
+There is another plus I've found in using vim, and it's really a side effect of using it alongside `tmux` and all the other tools I've mentioned in this article. By having as much of my development workflow located in the terminal as possible, I've drastically cut down on the amount of context switching that I experience. I no longer jump between a editor where I type code to a terminal where I execute my code and tests to a browser to look at another file in the codebase on Github. I know simply start a session with tmux, create a splitscreen of two or more panes, and edit my code in vim in one pane while performing all sorts of other processes in the other panes.
+
+In a field of work where mental energy and focus is a premium in order to perform at a high level, this benefit has helped me enormously in boosting my productivity and practicing essential command line skills. I recommend that you give it a try yourself, and start small so that you don't overload yourself. Pick up a few of the tools I've mentioned here at a time and incorporate them into your daily work. Soon enough, you'll be zipping along on the command line.
