@@ -1,47 +1,48 @@
 # Leveraging the Command Line for Increased Productivity
 
 ## Intro
-As working developers grow in their career, we should always be seeking ways to improve our productivity and effectiveness. Many of us are drawn to the dazzling array of extensions, plugins, and third-party tools that claim to “boost our productivity”, but there is actually one area full of fertile ground for improvement that we all use everyday: the command line.
+As working developers growing their career, we should always be seeking ways to improve our productivity and effectiveness. Many of us are drawn to the dazzling array of extensions, plugins, and third-party tools that claim to “boost our productivity”, but there is actually one area full of fertile ground for improvement that we all use everyday: the command line.
 
-Nestled within the command line are a host of features and commands that can drastically improve how effectively we work, and in this article I’m going to highlight several that I’ve found helpful for me. I’ll also show you exactly how I use them on a day-to-day basis with examples. Whether you’re a beginner just starting their career or an intermediate developer with some experience, this article is for you.
-
+Nestled within the command line are a host of features and commands that can drastically improve how effectively we work, and in this article I’d like to highlight several that I’ve found to boost my productivity. I’ll also show you how I use them on a day-to-day basis with examples. Whether you’re a beginner just starting their career or a working developer with some experience, this article is for you.
 
 ## I/O Redirection
-Knowing how to direct the standard input and output of your terminal is essential to boosting your productivity.  For example, let’s say that you’re working on an application and it’s giving you a ton of logs that you want to look over. Rather than having the logs simply output in your terminal so that you have to scroll through them, you can do the following:
+We'll start with directing the standard input and output of your terminal, which I found essential in getting more out of the command line.  For example, let’s say that you’re working on an application and it’s outputting a ton of logs that you want to look over. Rather than having the logs simply output to your terminal requiring you to scroll through them, you can do the following:
 
 `$ command_to_run_application &2> log-file.txt`
 
 What this does is it runs your application and then directs all standard output including errors to a new file called `log-file.txt`. Thus all of your logs will be saved into a separate file that you can search through and share with other developers if you need help.
 
-You can use the same method to save the output of running a large test suite into a file like so:
+You can use the same method to save the output of running a large test suite into a file. Here is an example from running the test files for a Golang project:
 
 `$ go test -v ./ &2> test-output.txt`
 
-In the above case, I’m running tests written in the Golang language but the I/O redirection is the same.
-
 ## pbcopy & pbpaste
-Two of my favorite little features are `pbcopy` and `pbpaste` which are the copy and paste functions on the command line for MacOSX. For Linux users, there are similar commands that you can download: [How To Use Pbcopy And Pbpaste Commands On Linux - OSTechNix](https://www.ostechnix.com/how-to-use-pbcopy-and-pbpaste-commands-on-linux/)
+Two of my favorite little commands are `pbcopy` and `pbpaste` which are the copy and paste functions on the command line for MacOS. For Linux users, there are similar commands that you can download: [How To Use Pbcopy And Pbpaste Commands On Linux - OSTechNix](https://www.ostechnix.com/how-to-use-pbcopy-and-pbpaste-commands-on-linux/)
 
-I love these commands as they allow me to copy information from the command line without taking my hands away from the keyboard. They also make it easy to copy & paste file contents that may be difficult to accomplish with a mouse, such as with copying RSA keys to Github or other  sites like so:
+I love these commands because they allow me to copy information from the command line without taking my hands away from the keyboard. They also make it easy to copy & paste file contents that may be difficult to accomplish with a mouse, such as copying RSA keys to Github or other sites like so:
 
 `$ cat public_rsa.sh | pbcopy`
 
 You can then simply use your keyboard shortcut for paste to dump the contents where you need to.
 
 ## grep & rgrep
-With `grep` we obtain a massive superpower: the ability to find all the occurrences of a given expression in all folders and files found at a given path. This is incredibly useful for when you’re editing a file and come across a function that you need to modify or look up for more information. Using `grep` we can find every place that the function is used in milliseconds.
+With `grep` we obtain a massive superpower: the ability to find all the occurrences of a given expression in all folders and files found in a given path. This is incredibly useful for when you’re editing a file and come across a function that you need to modify or look up for more information. Using `grep` we can find every place that the function is used in milliseconds.
 
-For example, let’s say I’m working on an API endpoint that has a `validateRequest` function and I want to see how this function is implemented. I can use `grep`  in the parent directory to easily find where the function is defined like so:
+For example, let’s say I’m working on an API endpoint that has a `validateRequest` function and I want to see how this function is implemented. I can use `grep` in the directory to easily find where the function is defined in any fileslike so:
 
-`$ grep validateRequest parent_dir/*`
+`$ grep validateRequest ./*`
 
 (TODO: add pic of using grep on computer)
 
-And the output will give me all the files and line numbers where we can find `validateRequest` being invoked or defined. This is extremely helpful when working with a large codebase and the execution is much faster than using the Github search feature (or what every source control solution you use).
+The output will give all the occurrences of `validateRequest` being invoked or defined. If you want to search all subdirectories and their files, execute the following:
 
-As a bonus, I’d recommend that you look into `rgrep` which is a re-implementation of `grep` written in Rust that is several orders faster than `grep`.
+`$ grep -r validateRequest ./*`
 
-(TODO: add pic of using rgrep on computer)
+This is extremely helpful when working with a large codebase and the execution is much faster than using the Github search feature (or what every source control solution you use). You can also have `grep` output the line number for each occurrence by adding the `-b` flag like so:
+
+`$ grep -rb validateRequest ./*`
+
+As a bonus, I’d recommend that you look into `rgrep` which is a re-implementation of `grep` written in Rust that is several orders faster than `grep`. Additionally, by default the basic command will show the line number for each occurence in the respective file, highlights the occurence, and will recursively search all subdirectories and their files where as `grep` requires the flags mentioned above to do the same.
 
 ## less / bat
 The next tool that I want to cover is `less` which allows you to interactively view the contents of a file in your terminal. This differs from `cat` or `tail` in that you can view the whole file, not just a defined set of lines at either the top or bottom of the file. 
