@@ -1,6 +1,4 @@
 # Leveraging the Command Line for Increased Productivity
-	* tmux
-	* vim
 
 ## Intro
 As working developers grow in their career, we should always be seeking ways to improve our productivity and effectiveness. Many of us are drawn to the dazzling array of extensions, plugins, and third-party tools that claim to “boost our productivity”, but there is actually one area full of fertile ground for improvement that we all use everyday: the command line.
@@ -57,9 +55,9 @@ But the real magic comes when you use `grep` and `less` together to boost your w
 I've found `less` to be a huge boost in my productivity and recently I've discovered `bat`, which is a re-implemenation of `less` that provides syntax highlighting, line numbering, and many other features. Give it a try!
 
 ## tmux
-I've already mentioned `tmux` in previous sections, and here I'd like to give a brief peek at how I use it. Essentially, `tmux` is a terminal multiplexer that acts as a window manager for your terminal. It allows you to create "windows" and cycle through through them so that you can have a window for separate tasks or processes. Additionally, you can create panes in each window that act as split screens so that you can perform separate operations in the same terminal window.
+I've already mentioned `tmux` in previous sections, and here I'd like to give a brief peek at how I use it. Essentially, `tmux` is a terminal multiplexer that acts as a window manager for your terminal. It allows you to create "windows" that you can cycle through, with each window serving as a complete terminal for separate tasks or processes. And in each window you can create panes that can split your screen so that you can perform separate operations in the same terminal window.
 
-`tmux` also allows you to create terminal "sessions", attach to a session, create create a unique layout that could have files open or processes running, and detach from a session while retaining your pane layout.
+The way that `tmux` achieves this is through "sessions" which you can attach and detach from. When attached to a session, you can create a new window with a unique layout of panes that can have files open or processes running, and later detach from a session while retaining your pane layout. Many sessions, each potentially having many windows and each window with many panes.
 
 It's best understood with some images, so here you go:
 
@@ -68,6 +66,12 @@ It's best understood with some images, so here you go:
 There are a ton of things that you can do with `tmux` and my goal here is just to introduce it as an essential tool in my workflow. If you're interested in learning more about `tmux`, check out the following links:
 
 (TODO: add links to tmux resources)
+[](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)
+[](https://danielmiessler.com/study/tmux/)
+[](https://sanctum.geek.nz/arabesque/zooming-tmux-panes/)
+[](https://medium.com/@matthewmain/tmux-getting-started-3842b57435c0)
+[](https://medium.com/@lamdbui/faster-command-line-workflow-with-tmux-a6539c8eae2c)
+[](https://thoughtbot.com/upcase/tmux)
 
 ## vim
 Last but not least we have vim, a text editor that comes pre-installed with every Linux and MacOS operating system. It has a reputation for being difficult to learn, but I actually found that it's not that hard so long as you have patience and learn in small chunks.
@@ -77,6 +81,11 @@ Vim allows you to edit and navigate all of your files entirely from the keyboard
 The other huge plus in using vim is how customizable it is. Not only are there plenty of plugins that you can download to get specific key shortcuts, syntax coloring, and more, but you can also setup your own shortcuts by modifying your vim's configurations in a `.vimrc` file. Vim truly is a tool that you make your own and time invested in learning it is well spent.
 
 To get started learning vim, simply go to your command line if you're on Linux or MacOS, type `vimtutor`, and hit Enter. You'll be taken to an interactive tutorial of vim that'll teach you the basics. After that, check out the following resources:
+
+[](https://thoughtbot.com/upcase/onramp-to-vim)
+[](https://thoughtbot.com/upcase/the-art-of-vim)
+[](http://vimcasts.org/blog/)
+[](https://pragprog.com/book/dnvim2/practical-vim-second-edition)
 
 ## Closing Thoughts
 
